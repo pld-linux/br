@@ -35,7 +35,7 @@ Prosty kre¶larz biorytmów w ascii-art.
 rm -f %{name}.c
 cp %{SOURCE1} .
 
-%{__cc} %{rpmldflags} -o %{name} %{rpmcflags} %{name}.c
+%{__cc} %{rpmldflags} -o %{name} %{rpmcflags} %{name}.c -lm
 
 %install
 rm -rf $RPM_BUILD_ROOT
