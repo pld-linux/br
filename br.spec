@@ -8,7 +8,9 @@ Group:		amusment
 #Vendor:		-
 #Icon:		-
 Source0:	http://www.sta.to/ftp/%{name}.tar.gz
+# Source0-md5:	095229028b82631664116631e5caf93a
 Source1:	http://www.sta.to/ftp/%{name}.c
+# Source1-md5:	a11826334de33059a0894dcc63880049
 Patch0:		%{name}-accept-cmdline.patch
 URL:		-
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
