@@ -30,7 +30,7 @@ cgi
 cgi
 
 %prep
-%setup -q -n %{name} 
+%setup -q -n %{name}
 %patch0 -p0
 
 %build
