@@ -1,0 +1,59 @@
+--- /home/users/hunter/rpm/SOURCES/br.c	Mon Jan 24 00:00:00 2000
++++ br.c	Wed Jan  1 23:04:39 2003
+@@ -100,7 +100,7 @@
+ 
+ 
+ 
+-int main()
++int main(int argc, char* argv[])
+ {
+ 
+   /* Start
+@@ -110,10 +110,13 @@
+   /* --------------------------------------------------------------------
+      Eingabe des heutigen Datums [enter todays date]
+      -------------------------------------------------------------------- */
++
++if (argc != 2) {
+   (void) printf("\nDate     [<RETURN> for Systemdate] (DD.MM.YYYY) : ");
+ 
+   INPUT(dtmp);
+ 
++}
+   if (strlen(dtmp) != 10)
+   {                                /* get TODAY's date */
+     now = time((time_t *) NULL);
+@@ -140,13 +143,20 @@
+   if (t_yy % 4 == 0)
+     MONATSTAG[1]=29;
+ 
++
+   /* --------------------------------------------------------------------
+      Eingabe des Geburtstages  [enter the birthdate]
+      -------------------------------------------------------------------- */
++if (argc != 2) {
++
+   (void) printf("Birthday [<RETURN> for 04.12.1965] (DD.MM.YYYY) : ");
+ 
+   INPUT(dtmp);
++} else {
++		strncpy(dtmp, argv[1], 10);
++}
+ 
++  
+   if (strlen(dtmp) != 10)
+     (void) strcpy(dtmp,"04.12.1965");
+ 
+@@ -235,9 +245,9 @@
+        -------------------------------------------------------------------- */
+     if (!DRUCKER)
+     {
+-      (void) printf("Biorhythm    %02d.%02d.%04d\n",th,mh,jh);
+-      (void) printf("Physical:    %d%%\n",phys);
+-      (void) printf("Emotional:   %d%%\n",emot);
++      (void) printf("Biorhythm    %02d.%02d.%04d\t",th,mh,jh);
++      (void) printf("Physical:    %d%%\t",phys);
++      (void) printf("Emotional:   %d%%\t",emot);
+       (void) printf("Mental:      %d%%\n\n",geist);
+     }
+     else
