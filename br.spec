@@ -1,30 +1,27 @@
-Summary:	biorytm
-Summary(pl):	bri
+Summary:	Biorhythmus
+Summary(pl):	biorytm
 Name:		br
-Version:   0.1
-Release:  1
-License:   Unknown (enter GPL/LGPL/BSD/BSD-like/other license name here)
-Group:		amusment
-#Vendor:		-
-#Icon:		-
+Version:	0.1
+Release:	1
+License:	?
+Group:		Applications
 Source0:	http://www.sta.to/ftp/%{name}.tar.gz
 # Source0-md5:	095229028b82631664116631e5caf93a
 Source1:	http://www.sta.to/ftp/%{name}.c
 # Source1-md5:	a11826334de33059a0894dcc63880049
 Patch0:		%{name}-accept-cmdline.patch
-URL:		-
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Simple biorytm-graph ascii-art drawer.
+Simple biorhythm-graph ascii-art drawer.
 
 %description -l pl
 Prosty kre¶larz biorytmów w ascii-art.
 
 %package cgi
-Summary:   aqq
-Summary(pl):   aqq
-Group:		-
+Summary:	aqq
+Summary(pl):	aqq
+Group:		Applications
 
 %description cgi
 cgi
@@ -48,16 +45,7 @@ install -d $RPM_BUILD_ROOT/usr/bin
 install %{name} $RPM_BUILD_ROOT/usr/bin
 
 %clean
-
 rm -rf $RPM_BUILD_ROOT
-
-%pre
-
-%post
-
-%preun
-
-%postun
 
 %files
 %defattr(644,root,root,755)
