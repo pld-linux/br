@@ -1,5 +1,5 @@
 Summary:	Biorhythmus
-Summary(pl):	biorytm
+Summary(pl):	Biorytm
 Name:		br
 Version:	0.1
 Release:	1
@@ -18,16 +18,14 @@ Simple biorhythm-graph ascii-art drawer.
 %description -l pl
 Prosty kre¶larz biorytmów w ascii-art.
 
-%package cgi
-Summary:	aqq
-Summary(pl):	aqq
-Group:		Applications
+#%package cgi
+#Summary:	aqq
+#Summary(pl):	aqq
+#Group:		Applications
 
-%description cgi
-cgi
+#%description cgi
 
-%description cgi -l pl
-cgi
+#%description cgi -l pl
 
 %prep
 %setup -q -n %{name}
@@ -35,14 +33,15 @@ cgi
 
 %build
 rm -f %{name}.c
-cp %{SOURCE1} ./
-%{__cc} -lm -o %{name} %{name}.c
+cp %{SOURCE1} .
+
+%{__cc} %{rpmldflags} -o %{name} %{rpmcflags} %{name}.c
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/bin
+install -d $RPM_BUILD_ROOT%{_bindir}
 
-install %{name} $RPM_BUILD_ROOT/usr/bin
+install %{name} $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,9 +49,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-#%%{_datadir}/%{name}
 
-%files cgi
-%defattr(644,root,root,755)
-#%doc extras/*.gz
-#%%{_datadir}/%{name}-ext
+#%files cgi
+#%defattr(644,root,root,755)
