@@ -1,5 +1,5 @@
 Summary:	Biorhythmus
-Summary(pl):	Biorytm
+Summary(pl.UTF-8):   Biorytm
 Name:		br
 Version:	0.1
 Release:	1
@@ -15,8 +15,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Simple biorhythm-graph ascii-art drawer.
 
-%description -l pl
-Prosty kre∂larz biorytmÛw w ascii-art.
+%description -l pl.UTF-8
+Prosty kre≈õlarz biorytm√≥w w ascii-art.
 
 #%package cgi
 #Summary:	aqq
