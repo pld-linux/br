@@ -1,5 +1,5 @@
 Summary:	Biorhythmus
-Summary(pl.UTF-8):   Biorytm
+Summary(pl.UTF-8):	Biorytm
 Name:		br
 Version:	0.1
 Release:	1
