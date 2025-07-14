@@ -29,7 +29,7 @@ Prosty kreślarz biorytmów w ascii-art.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p0
+%patch -P0 -p0
 
 %build
 rm -f %{name}.c
